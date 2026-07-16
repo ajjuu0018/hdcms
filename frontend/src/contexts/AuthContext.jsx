@@ -34,10 +34,16 @@ export function AuthProvider({ children }) {
       setUser(data.user);
       return data.user;
     } catch (e) {
-      const msg = formatError(e.response?.data?.detail) || e.message;
-      setError(msg);
-      throw new Error(msg);
-    }
+  console.log("LOGIN ERROR:", e);
+  console.log("STATUS:", e.response?.status);
+  console.log("DATA:", e.response?.data);
+  console.log("URL:", e.config?.url);
+  console.log("BASE URL:", e.config?.baseURL);
+
+  const msg = formatError(e.response?.data?.detail) || e.message;
+  setError(msg);
+  throw new Error(msg);
+}
   }, []);
 
   const logout = useCallback(async () => {
