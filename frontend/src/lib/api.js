@@ -5,7 +5,6 @@ export const API_BASE = `${BACKEND}/api`;
 
 export const api = axios.create({
   baseURL: API_BASE,
-  withCredentials: true,
 });
 
 // Attach token from localStorage if present
