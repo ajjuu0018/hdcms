@@ -1,0 +1,10 @@
+/* App.js styles - HDCMS uses index.css for full styling */
+.App {
+    min-height: 100vh;
+}
+
+@media print {
+    aside, header { display: none !important; }
+    .h-btn-primary, button { display: none !important; }
+    main { padding: 0 !important; }
+}

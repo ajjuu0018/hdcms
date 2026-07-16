@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 0 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 0 100% 40%;
+    --chart-1: 0 80% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 42 95% 55%;
+    --chart-4: 217 91% 60%;
+    --chart-5: 270 60% 60%;
+    --radius: 0.125rem;
+
+    --honda-red: #CC0000;
+    --honda-red-hover: #A30000;
+    --sidebar-bg: #0A0A0A;
+    --sidebar-fg: #F3F4F6;
+    --bg-canvas: #F9FAFB;
+}
+
+.dark {
+    --background: 222 47% 7%;
+    --foreground: 0 0% 95%;
+    --card: 222 47% 9%;
+    --card-foreground: 0 0% 95%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 19% 17%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 217 19% 17%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 217 19% 17%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 19% 22%;
+    --input: 217 19% 22%;
+    --ring: 0 100% 50%;
+}
+
+* {
+    border-color: hsl(var(--border));
+}
+
+html, body {
+    margin: 0;
+    background-color: var(--bg-canvas);
+    color: hsl(var(--foreground));
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "tnum";
+}
+
+.dark body {
+    background-color: hsl(var(--background));
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Chivo', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.font-mono, code, pre {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Honda industrial accents */
+.h-grid-line {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.dark .h-grid-line {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.h-stripe {
+    background-image: repeating-linear-gradient(45deg, #CC0000, #CC0000 6px, #FFD700 6px, #FFD700 12px);
+}
+
+.h-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6B7280;
+}
+
+.h-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+}
+
+.dark .h-card {
+    background: hsl(var(--card));
+    border-color: hsl(var(--border));
+}
+
+.h-card-hover:hover {
+    border-color: #9CA3AF;
+    transform: translateY(-1px);
+    transition: all 200ms ease-in-out;
+}
+
+.h-btn-primary {
+    background-color: var(--honda-red);
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+}
+
+.h-btn-primary:hover {
+    background-color: var(--honda-red-hover);
+}
+
+.h-btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.h-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.h-table thead th {
+    background: #F9FAFB;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.dark .h-table thead th {
+    background: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    border-bottom-color: hsl(var(--border));
+}
+
+.h-table tbody tr {
+    border-bottom: 1px solid #F3F4F6;
+    transition: background-color 0.15s;
+}
+
+.dark .h-table tbody tr {
+    border-bottom-color: hsl(var(--border));
+}
+
+.h-table tbody tr:hover {
+    background: #F9FAFB;
+}
+
+.dark .h-table tbody tr:hover {
+    background: hsl(var(--muted));
+}
+
+.h-table td {
+    padding: 0.6rem 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.825rem;
+    color: hsl(var(--foreground));
+}
+
+.h-status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-radius: 2px;
+}
+
+.h-input {
+    background: white;
+    border: 1px solid #D1D5DB;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.dark .h-input {
+    background: hsl(var(--background));
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+}
+
+.h-input:focus {
+    outline: none;
+    border-color: var(--honda-red);
+    box-shadow: 0 0 0 1px var(--honda-red);
+}
+
+.h-corner-marker::before,
+.h-corner-marker::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--honda-red);
+}
+
+.h-corner-marker::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.h-corner-marker::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D1D5DB; }
+::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+.dark ::-webkit-scrollbar-thumb { background: #374151; }
+
+[data-debug-wrapper="true"] { display: contents !important; }

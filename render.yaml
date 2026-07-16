@@ -1,0 +1,31 @@
+services:
+  - type: web_service
+    name: hdcms-backend
+    env: python
+    root: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_ALGORITHM
+        value: HS256
+        sync: false
+      - key: CORS_ORIGINS
+        value: '*'
+        sync: false
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME
+        value: hdcms
+        sync: false
+  - type: static_site
+    name: hdcms-frontend
+    env: static
+    root: frontend
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    publishPath: build
+    envVars:
+      - key: REACT_APP_BACKEND_URL
+        sync: false

@@ -1,0 +1,137 @@
+{
+  "project_name": "Honda Digital Calibration Management System (HDCMS)",
+  "theme": "Light Theme (with dark high-contrast sidebar)",
+  "archetype": "4 (Swiss & High-Contrast)",
+  "design_philosophy": "Industrial Enterprise Tool. Precise, structured, data-dense, technical aesthetic mirroring automotive manufacturing engineering culture. Avoids consumer-app fluff. Color is used strictly for function, status, and hierarchy.",
+  "typography": {
+    "fonts": {
+      "headings": "Chivo",
+      "body": "IBM Plex Sans",
+      "monospace": "IBM Plex Mono",
+      "banned_fonts": ["Inter", "Roboto", "Open Sans", "Lato"]
+    },
+    "hierarchy": {
+      "h1": "text-4xl font-black tracking-tighter text-gray-900",
+      "h2": "text-2xl font-bold tracking-tight text-gray-900",
+      "h3": "text-lg font-semibold tracking-tight text-gray-800",
+      "h4": "text-sm font-bold uppercase tracking-[0.2em] text-gray-500",
+      "body": "text-sm text-gray-700 leading-relaxed font-sans",
+      "table_data": "text-sm text-gray-900 font-mono tabular-nums",
+      "timestamp": "text-xs text-gray-400 font-mono"
+    }
+  },
+  "colors": {
+    "brand": {
+      "honda_red": "#CC0000",
+      "honda_red_hover": "#A30000",
+      "obsidian_black": "#000000"
+    },
+    "layout": {
+      "background": "#F9FAFB",
+      "surface": "#FFFFFF",
+      "sidebar_bg": "#000000",
+      "sidebar_text": "#F3F4F6",
+      "border": "#E5E7EB",
+      "border_dark": "#374151"
+    },
+    "text": {
+      "primary": "#111827",
+      "secondary": "#4B5563",
+      "muted": "#9CA3AF"
+    },
+    "status": {
+      "pass": { "bg": "#D1FAE5", "text": "#065F46", "border": "#10B981" },
+      "fail": { "bg": "#FEE2E2", "text": "#991B1B", "border": "#CC0000" },
+      "warning": { "bg": "#FEF3C7", "text": "#92400E", "border": "#F59E0B" },
+      "info": { "bg": "#DBEAFE", "text": "#1E40AF", "border": "#3B82F6" }
+    },
+    "dynamic_gauge_logic": {
+      "rule": "Gauge color logic dynamically changes based on the current month to reflect physical floor tags.",
+      "jan_to_jun": {
+        "user_department": { "hex": "#FBBF24", "name": "Yellow" },
+        "calibration_department": { "hex": "#10B981", "name": "Green" }
+      },
+      "jul_to_dec": {
+        "user_department": { "hex": "#10B981", "name": "Green" },
+        "calibration_department": { "hex": "#FBBF24", "name": "Yellow" }
+      }
+    }
+  },
+  "spacing_and_layout": {
+    "grid_system": "MODE B: THE CONTROL ROOM GRID",
+    "rules": [
+      "Base Grid: grid-cols-1 md:grid-cols-3 lg:grid-cols-4 or 12-col dense grids.",
+      "Gap Strategy: Tight (gap-4 or gap-6).",
+      "Every pixel utilized, no jagged bottoms (h-full).",
+      "Padding: Containers with borders must have internal padding (p-4 to p-6).",
+      "Optical alignment: Use right padding for icons placed on the left side of buttons."
+    ]
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#CC0000] text-white hover:bg-[#A30000] rounded-sm font-semibold text-sm px-4 py-2 transition-colors",
+      "secondary": "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 rounded-sm font-semibold text-sm px-4 py-2 transition-colors",
+      "ghost": "text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-sm font-semibold text-sm px-4 py-2 transition-colors"
+    },
+    "cards": {
+      "style": "Grid Borders (The 'Technical' Look)",
+      "classes": "bg-white border border-gray-200 rounded-none shadow-none",
+      "hover": "hover:-translate-y-[1px] hover:border-gray-300 transition-all duration-200"
+    },
+    "tables": {
+      "style": "High-density data tables. Monospace fonts for all metric/numeric columns.",
+      "header": "bg-gray-50 text-gray-500 text-xs uppercase tracking-wider font-bold border-b border-gray-200 py-3 px-4",
+      "row": "border-b border-gray-100 hover:bg-gray-50/50 transition-colors",
+      "cell": "py-2 px-4 text-sm font-mono text-gray-900"
+    },
+    "forms": {
+      "inputs": "rounded-sm border border-gray-300 px-3 py-2 text-sm focus:border-[#CC0000] focus:ring-1 focus:ring-[#CC0000] outline-none transition-all",
+      "labels": "block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1"
+    },
+    "badges": {
+      "base": "inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-bold font-mono uppercase border"
+    },
+    "navigation_sidebar": {
+      "style": "Dark mode sidebar contrasting with light main content area.",
+      "container": "bg-[#000000] border-r border-gray-800 text-gray-300 w-64 min-h-screen",
+      "link_active": "bg-gray-900 text-white border-l-4 border-[#CC0000]",
+      "link_inactive": "hover:bg-gray-900 hover:text-white transition-colors"
+    }
+  },
+  "motion": {
+    "philosophy": "Minimalist and functional. No distracting bounce or spring effects.",
+    "transitions": "transition-all duration-200 ease-in-out",
+    "hover_states": "Subtle border darkening or background shifts. Explicit text colors on hover."
+  },
+  "icons": {
+    "library": "@phosphor-icons/react",
+    "usage": "Use bold or regular weights for clarity in dense data environments. Avoid overly playful/rounded icons.",
+    "installation": "yarn add @phosphor-icons/react"
+  },
+  "images": {
+    "login_background": {
+      "url": "https://images.pexels.com/photos/19233057/pexels-photo-19233057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "High-tech robots assembling a car in a modern factory setting. Use with a heavy dark overlay (e.g., bg-black/70) so the login card stands out.",
+      "category": "background"
+    },
+    "empty_state_gauge": {
+      "url": "https://images.unsplash.com/photo-1674471361523-195aa08e69b5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwzfHxwcmVjaXNpb24lMjBlbmdpbmVlcmluZyUyMGdhdWdlfGVufDB8fHx8MTc4MjU4Nzc1Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Close up of a pressure gauge on a machine. Good for 'No gauges found' or 'Calibration report empty' states.",
+      "category": "illustration"
+    }
+  },
+  "testing": {
+    "requirements": [
+      "All interactive elements MUST include data-testid attribute.",
+      "Format: kebab-case, role-based. e.g., data-testid='login-submit-button', data-testid='approve-gauge-workflow'."
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the dynamic color logic for gauges: the month of the year dictates whether User Dept / Calibration Dept tags are Green or Yellow. Implement a utility function to compute this.",
+    "Use Shadcn UI for complex components (Tables, Dialogs, Selects) but heavily override their styles to remove the generic 'rounded-md / soft shadow' Vercel look. Force 'rounded-sm' and strict 1px borders.",
+    "The UI must employ the 'Control Room Grid' for dashboards. It should look like an industrial HMI (Human-Machine Interface), dense and exact.",
+    "For the Calibration reading table, use 'IBM Plex Mono' (tabular-nums) so decimal points align perfectly in the Error and Tolerance columns.",
+    "Do NOT use placeholder images. Rely on the provided Pexels/Unsplash URLs.",
+    "Never use fully transparent backgrounds behind text. Always ensure minimum 4.5:1 contrast."
+  ]
+}
